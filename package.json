@@ -1,0 +1,28 @@
+{
+  "name": "global-grunt",
+  "version": "1.0.0",
+  "description": "The only grunt boilerplate you need!",
+  "main": "GruntFile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint Gruntfile.js grunt/**.js"
+  },
+  "keywords": [
+    "grunt",
+    "global-grunt",
+    "boilerplate",
+    "starterkit"
+  ],
+  "author": "Ward Peeters",
+  "license": "MIT",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "lodash": "^3.10.1",
+    "load-grunt-config": "^0.19.0"
+  },
+  "devDependencies": {
+    "cache-require-paths": "^0.1.2",
+    "eslint": "^1.9.0",
+    "eslint-config-airbnb": "^1.0.0"
+  }
+}
