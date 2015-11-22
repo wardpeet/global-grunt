@@ -4,8 +4,8 @@
   "description": "The only grunt boilerplate you need!",
   "main": "GruntFile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint Gruntfile.js grunt/**.js"
+    "test": "cd test;nodeunit index.js",
+    "lint": "eslint Gruntfile.js grunt/ test/"
   },
   "keywords": [
     "grunt",
@@ -23,6 +23,7 @@
   "devDependencies": {
     "cache-require-paths": "^0.1.2",
     "eslint": "^1.9.0",
-    "eslint-config-airbnb": "^1.0.0"
+    "eslint-config-airbnb": "^1.0.0",
+    "nodeunit": "^0.9.1"
   }
 }

@@ -1,6 +1,6 @@
 /* global process */
 module.exports = function(grunt) {
-    // cache our require paths (#perfmatters)npm
+    // cache our require paths (#perfmatters)
     require('cache-require-paths');
 
     // Time Grunt
