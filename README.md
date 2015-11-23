@@ -1,4 +1,4 @@
-# Global Grunt
+# Global Grunt [![Build Status](https://travis-ci.org/wardpeet/global-grunt.svg?branch=master)](https://travis-ci.org/wardpeet/global-grunt)
 The only grunt boilerplate you will ever need! Specify the default grunt plugins you need and override them for every project specific.
 Basically it's a wrapper around **[load-grunt-config](https://github.com/firstandthird/load-grunt-config)**.
 
