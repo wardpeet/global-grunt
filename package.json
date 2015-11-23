@@ -5,7 +5,8 @@
   "main": "GruntFile.js",
   "scripts": {
     "test": "cd test;nodeunit index.js",
-    "lint": "eslint Gruntfile.js grunt/ test/"
+    "lint": "eslint Gruntfile.js grunt/ test/",
+    "grunt": "cd test;grunt config"
   },
   "keywords": [
     "grunt",

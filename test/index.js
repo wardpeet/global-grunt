@@ -8,6 +8,10 @@ var parseJson = require('./helpers/parseJson.js');
 var taskCount = 3;
 var rootDir = process.cwd();
 
+if (typeof Promise !== 'function') {
+    console.log('Promise is not available!');
+}
+
 exports.testBasic = function(test) {
     test.expect(6);
 
@@ -112,7 +116,8 @@ function spawnGrunt(gruntFile, args, command) {
 
 function defaultFailTest(promise, test) {
     promise.catch(function(response, error) {
-        console.log(response, error);
+        console.log('Response', response);
+        console.log('error', error);
 
         test.done();
     });
