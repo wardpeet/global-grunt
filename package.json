@@ -8,6 +8,11 @@
     "lint": "eslint Gruntfile.js grunt/ test/",
     "grunt": "cd test;grunt config"
   },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/wardpeet/global-grunt.git"
+  },
+  "bugs": "https://github.com/wardpeet/global-grunt/issues",
   "keywords": [
     "grunt",
     "global-grunt",
@@ -16,6 +21,9 @@
   ],
   "author": "Ward Peeters",
   "license": "MIT",
+  "engines": {
+    "node": ">= 0.12"
+  },
   "dependencies": {
     "grunt": "^0.4.5",
     "lodash": "^3.10.1",
