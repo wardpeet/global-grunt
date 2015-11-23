@@ -1,7 +1,7 @@
-module.exports = function(grunt) {
+module.exports = function() {
     return {
         options: {
             test: false,
-        }
+        },
     };
 };

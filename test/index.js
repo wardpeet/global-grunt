@@ -1,9 +1,12 @@
 #!/usr/bin/env node
 
 var _ = require('lodash');
+var path = require('path');
 var spawn = require('child_process').spawn;
 var parseJson = require('./helpers/parseJson.js');
+
 var taskCount = 3;
+var rootDir = process.cwd();
 
 exports.testBasic = function(test) {
     test.expect(6);
@@ -20,6 +23,8 @@ exports.testBasic = function(test) {
 
         test.done();
     });
+
+    defaultFailTest(promise, test);
 };
 
 exports.testBasicSetup = function(test) {
@@ -86,7 +91,7 @@ function spawnGrunt(gruntFile, args, command) {
     command = command || 'config';
 
     var promise = new Promise(function(resolve, reject) {
-        var grunt = spawn('grunt', _.union([command, '--gruntfile=' + gruntFile], args));
+        var grunt = spawn('grunt', _.union([command, '--gruntfile=' + path.join(rootDir, gruntFile)], args));
         var response = '';
 
         grunt.stdout.on('data', function(data) {

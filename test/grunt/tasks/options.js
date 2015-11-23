@@ -1,6 +1,4 @@
 module.exports = function(grunt) {
-    'use strict';
-
     // Default task
     grunt.registerTask('options', function() {
         var data = {

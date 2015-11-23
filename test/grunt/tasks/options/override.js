@@ -1,8 +1,8 @@
-module.exports = function(grunt) {
+module.exports = function() {
     return {
         options: {
             a: false,
             b: true,
-        }
+        },
     };
 };
