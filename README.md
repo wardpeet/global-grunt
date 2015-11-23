@@ -12,3 +12,14 @@ Basically it's a wrapper around **[load-grunt-config](https://github.com/firstan
 
 ## Demo
 Coming soon
+
+### Options
+#### grunt
+
+#### tasks
+The task folder used by [JIT-Grunt](https://github.com/shootaroo/jit-grunt).
+JIT Loading for custom tasks dir (replacement of grunt.loadTasks).
+
+#### override
+#### default
+#### setup
