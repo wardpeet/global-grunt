@@ -1,21 +1,21 @@
-module.exports = function(grunt, settings) {
-    // Deps
-    var fs = require('fs');
-    var path = require('path');
-    var _ = require('lodash');
+// Deps
+var path = require('path');
+var _ = require('lodash');
 
+module.exports = function(grunt, settings) {
     // variables
     var data = settings.default;
+    var config = {};
 
     if (settings.setup) {
         if (typeof settings.setup === 'function') {
-            data = settings.setup(data, parse(grunt.option.flags()));
+            data = settings.setup(data, parse(grunt.option.flags()), grunt);
         } else {
             grunt.log.fail('settings.setup should be a function');
         }
     }
 
-    var config = {
+    config = {
         configPath: settings.grunt,
         data: data,
         jitGrunt: {
@@ -23,7 +23,7 @@ module.exports = function(grunt, settings) {
             staticMappings: settings.mappings || {},
         },
 
-        postProcess: settings.postProcess || noop,
+        postProcess: settings.postProcess || _.noop(),
         preMerge: preMerge,
     };
 
@@ -38,31 +38,21 @@ module.exports = function(grunt, settings) {
             var task = tasks[i];
             var fileName = path.join(settings.override, task);
 
-            if (fileExists(fileName + '.js')) {
+            if (grunt.file.isFile(fileName + '.js')) {
                 grunt.verbose.subhead('[Task ' + task + ']');
                 grunt.verbose.ok('Reading ' + fileName + '.js');
-                mConfig[task] = require(fileName)(mConfig[task], options);
+                mConfig[task] = require(fileName)(mConfig[task], options, grunt);
             }
         }
     }
-
-    function fileExists(filePath) {
-        try {
-            return fs.statSync(filePath).isFile();
-        } catch (err) {
-            return false;
-        }
-    }
-
-    function parse(args) {
-        var options = {};
-        _.forEach(args, function(arg) {
-            var split = arg.split('=');
-            options[split[0].replace(/^--/, '')] = split[1] || true;
-        });
-
-        return options;
-    }
-
-    function noop() {}
 };
+
+function parse(args) {
+    var options = {};
+    _.forEach(args, function(arg) {
+        var split = arg.split('=');
+        options[split[0].replace(/^--/, '')] = split[1] || true;
+    });
+
+    return options;
+}
