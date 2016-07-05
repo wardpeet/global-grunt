@@ -6,6 +6,8 @@ module.exports = function(rootDir) {
         tasks: path.join(rootDir, 'grunt/tasks'),
         override: path.join(rootDir, 'grunt/tasks/config'),
 
+        jitGrunt: true,
+
         default: {
             env: 'test',
             src: 'src/',
