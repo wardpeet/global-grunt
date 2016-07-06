@@ -1,5 +1,5 @@
 {
-  "name": "global-grunt",
+  "name": "@wardpeet/global-grunt",
   "version": "1.0.1",
   "description": "The only grunt boilerplate you need!",
   "main": "GruntFile.js",
