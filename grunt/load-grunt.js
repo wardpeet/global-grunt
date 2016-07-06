@@ -22,13 +22,15 @@ module.exports = function(grunt, settings) {
             customTasksDir: settings.tasks,
             staticMappings: settings.mappings || {},
         },
+        init: false,
 
         postProcess: settings.postProcess || _.noop(),
         preMerge: preMerge,
     };
 
     // Start our load-grunt-config
-    require('load-grunt-config')(grunt, config);
+    var gruntConfig = require('load-grunt-config')(grunt, config);
+    grunt.initConfig(gruntConfig);
 
     function preMerge(mConfig, options) {
         var tasks = Object.keys(mConfig);

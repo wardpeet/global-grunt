@@ -90,6 +90,20 @@ exports.testPassesOptionsToOverride = function(test) {
     defaultFailTest(promise, test);
 };
 
+exports.testPassesOptionsInsideTasks = function(test) {
+    test.expect(1);
+
+    var promise = spawnGrunt('GruntFile.js', ['--env=preview'], 'jit').then(function(response) {
+        var data = parseJson(response);
+
+        test.strictEqual('prod', data.env);
+
+        test.done();
+    });
+
+    defaultFailTest(promise, test);
+};
+
 function spawnGrunt(gruntFile, args, command) {
     args = args || [];
     command = command || 'config';

@@ -1,6 +1,6 @@
 {
   "name": "global-grunt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The only grunt boilerplate you need!",
   "main": "GruntFile.js",
   "scripts": {
@@ -9,8 +9,8 @@
     "grunt": "cd test;grunt config"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/wardpeet/global-grunt.git"
+    "type": "git",
+    "url": "https://github.com/wardpeet/global-grunt.git"
   },
   "bugs": "https://github.com/wardpeet/global-grunt/issues",
   "keywords": [
