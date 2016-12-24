@@ -1,7 +1,7 @@
-module.exports = function (grunt) {
+module.exports = grunt => {
     // Default task
     grunt.registerTask('options', function () {
-        var data = {
+        const data = {
             options: this.options(),
             config: grunt.config()
         };

@@ -1,13 +1,11 @@
-module.exports = (function () {
-    var regex = /{[^%]+}/;
+const regex = /{[^%]+}/;
 
-    return function (ouput) {
-        var match = ouput.match(regex);
+module.exports = output => {
+    const match = output.match(regex);
 
-        if (match) {
-            return JSON.parse(match[0]);
-        }
+    if (match) {
+        return JSON.parse(match[0]);
+    }
 
-        return {};
-    };
-}());
+    return {};
+};

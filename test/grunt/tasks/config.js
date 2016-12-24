@@ -1,6 +1,6 @@
-module.exports = function (grunt) {
+module.exports = grunt => {
     // Default task
-    grunt.registerTask('config', function () {
+    grunt.registerTask('config', () => {
         grunt.log.writeln(JSON.stringify(grunt.config()));
     });
 };

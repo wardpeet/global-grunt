@@ -1,20 +1,18 @@
-module.exports = function (rootDir) {
-    var path = require('path');
+const path = require('path');
 
-    return {
-        grunt: path.join(rootDir, 'grunt/tasks/options'),
-        tasks: path.join(rootDir, 'grunt/tasks'),
-        override: path.join(rootDir, 'grunt/tasks/config'),
+module.exports = rootDir => ({
+    grunt: path.join(rootDir, 'grunt/tasks/options'),
+    tasks: path.join(rootDir, 'grunt/tasks'),
+    override: path.join(rootDir, 'grunt/tasks/config'),
 
-        jitGrunt: true,
+    jitGrunt: true,
 
-        default: {
-            env: 'test',
-            src: 'src/',
-            dist: 'dist/',
-            version: '1.0'
-        },
+    default: {
+        env: 'test',
+        src: 'src/',
+        dist: 'dist/',
+        version: '1.0'
+    },
 
-        setup: null
-    };
-};
+    setup: null
+});

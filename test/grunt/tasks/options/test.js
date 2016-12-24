@@ -1,7 +1,5 @@
-module.exports = function () {
-    return {
-        options: {
-            test: false
-        }
-    };
-};
+module.exports = ({
+    options: {
+        test: false
+    }
+});

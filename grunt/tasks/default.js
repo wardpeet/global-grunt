@@ -1,6 +1,6 @@
-module.exports = function (grunt) {
+module.exports = grunt => {
     // Default task
-    grunt.registerTask('default', function () {
+    grunt.registerTask('default', () => {
         grunt.log.ok('Run the default task!');
     });
 };

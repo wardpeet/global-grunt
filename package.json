@@ -7,7 +7,7 @@
     "lib/load-grunt.js"
   ],
   "scripts": {
-    "test": "cd test;nodeunit index.js",
+    "test": "nodeunit test/index.js",
     "lint": "eslint Gruntfile.js grunt/ test/",
     "grunt": "cd test;grunt config"
   },
@@ -25,7 +25,7 @@
   "author": "Ward Peeters",
   "license": "MIT",
   "engines": {
-    "node": ">= 4"
+    "node": ">= 6"
   },
   "dependencies": {
     "grunt": "^1.0.0",

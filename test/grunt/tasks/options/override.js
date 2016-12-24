@@ -1,8 +1,6 @@
-module.exports = function () {
-    return {
-        options: {
-            a: false,
-            b: true
-        }
-    };
-};
+module.exports = () => ({
+    options: {
+        a: false,
+        b: true
+    }
+});

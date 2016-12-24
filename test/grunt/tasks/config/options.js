@@ -1,4 +1,4 @@
-module.exports = function (config, options) {
+module.exports = (config, options) => {
     config.options = options;
 
     return config;

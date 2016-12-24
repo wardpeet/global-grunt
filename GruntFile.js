@@ -1,12 +1,11 @@
 /* global process */
-module.exports = function (grunt) {
-    // Dependencies
-    var path = require('path');
-
+// Dependencies
+const path = require('path');
+module.exports = grunt => {
     // Directories
-    var rootDir = process.cwd();
+    const rootDir = process.cwd();
 
-    var settings = {
+    const settings = {
         grunt: path.join(rootDir, 'grunt/tasks/options'),
         tasks: path.join(rootDir, 'grunt/tasks'),
         override: path.join(rootDir, 'grunt/tasks/config'),
