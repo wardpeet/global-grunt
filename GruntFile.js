@@ -1,5 +1,5 @@
 /* global process */
-module.exports = function(grunt) {
+module.exports = function (grunt) {
     // Dependencies
     var path = require('path');
 
@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 
         default: require(path.join(rootDir, 'grunt/defaultOptions'))(grunt),
 
-        setup: null,
+        setup: null
     };
 
     // Start our grunt initialization of tasks and config

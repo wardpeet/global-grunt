@@ -1,8 +1,5 @@
 /* global process */
-module.exports = function(grunt) {
-    // Time Grunt
-    require('time-grunt')(grunt);
-
+module.exports = function (grunt) {
     // Dependencies
     var path = require('path');
 

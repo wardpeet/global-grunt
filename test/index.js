@@ -12,10 +12,10 @@ if (typeof Promise !== 'function') {
     console.log('Promise is not available!');
 }
 
-exports.testBasic = function(test) {
+exports.testBasic = function (test) {
     test.expect(6);
 
-    var promise = spawnGrunt('GruntFile.js').then(function(response) {
+    var promise = spawnGrunt('GruntFile.js').then(function (response) {
         var data = parseJson(response);
 
         test.strictEqual(4 + taskCount, Object.keys(data).length, 'Options should contain 6 items');
@@ -31,10 +31,10 @@ exports.testBasic = function(test) {
     defaultFailTest(promise, test);
 };
 
-exports.testBasicSetup = function(test) {
+exports.testBasicSetup = function (test) {
     test.expect(8);
 
-    var promise = spawnGrunt('GruntFile-setup.js', ['--env=preview', '--lint']).then(function(response) {
+    var promise = spawnGrunt('GruntFile-setup.js', ['--env=preview', '--lint']).then(function (response) {
         var data = parseJson(response);
 
         test.strictEqual(6 + taskCount, Object.keys(data).length, 'Options should contain 8 items');
@@ -52,10 +52,10 @@ exports.testBasicSetup = function(test) {
     defaultFailTest(promise, test);
 };
 
-exports.testOverride = function(test) {
+exports.testOverride = function (test) {
     test.expect(4);
 
-    var promise = spawnGrunt('GruntFile.js', [], 'override').then(function(response) {
+    var promise = spawnGrunt('GruntFile.js', [], 'override').then(function (response) {
         var data = parseJson(response);
 
         test.strictEqual(3, Object.keys(data).length, 'Options should contain 3 items');
@@ -69,10 +69,10 @@ exports.testOverride = function(test) {
     defaultFailTest(promise, test);
 };
 
-exports.testPassesOptionsToOverride = function(test) {
+exports.testPassesOptionsToOverride = function (test) {
     test.expect(3);
 
-    var promise = spawnGrunt('GruntFile.js', [], 'options').then(function(response) {
+    var promise = spawnGrunt('GruntFile.js', [], 'options').then(function (response) {
         var data = parseJson(response);
 
         test.strictEqual(2, Object.keys(data).length, 'Data should contains options & config');
@@ -90,10 +90,10 @@ exports.testPassesOptionsToOverride = function(test) {
     defaultFailTest(promise, test);
 };
 
-exports.testPassesOptionsInsideTasks = function(test) {
+exports.testPassesOptionsInsideTasks = function (test) {
     test.expect(1);
 
-    var promise = spawnGrunt('GruntFile.js', ['--env=preview'], 'jit').then(function(response) {
+    var promise = spawnGrunt('GruntFile.js', ['--env=preview'], 'jit').then(function (response) {
         var data = parseJson(response);
 
         test.strictEqual('prod', data.env);
@@ -108,19 +108,19 @@ function spawnGrunt(gruntFile, args, command) {
     args = args || [];
     command = command || 'config';
 
-    var promise = new Promise(function(resolve, reject) {
+    var promise = new Promise(function (resolve, reject) {
         var grunt = spawn('grunt', _.union([command, '--gruntfile=' + path.join(rootDir, gruntFile)], args));
         var response = '';
 
-        grunt.stdout.on('data', function(data) {
+        grunt.stdout.on('data', function (data) {
             response += data;
         });
 
-        grunt.on('exit', function() {
+        grunt.on('exit', function () {
             resolve(response);
         });
 
-        grunt.on('error', function(error) {
+        grunt.on('error', function (error) {
             reject(response, error);
         });
     });
@@ -129,7 +129,7 @@ function spawnGrunt(gruntFile, args, command) {
 }
 
 function defaultFailTest(promise, test) {
-    promise.catch(function(response, error) {
+    promise.catch(function (response, error) {
         console.log('Response', response);
         console.log('error', error);
 

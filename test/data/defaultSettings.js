@@ -1,4 +1,4 @@
-module.exports = function(rootDir) {
+module.exports = function (rootDir) {
     var path = require('path');
 
     return {
@@ -12,9 +12,9 @@ module.exports = function(rootDir) {
             env: 'test',
             src: 'src/',
             dist: 'dist/',
-            version: '1.0',
+            version: '1.0'
         },
 
-        setup: null,
+        setup: null
     };
 };

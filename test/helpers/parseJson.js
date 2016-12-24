@@ -1,7 +1,7 @@
-module.exports = (function() {
+module.exports = (function () {
     var regex = /{[^%]+}/;
 
-    return function(ouput) {
+    return function (ouput) {
         var match = ouput.match(regex);
 
         if (match) {

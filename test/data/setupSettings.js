@@ -1,4 +1,4 @@
-module.exports = function(rootDir) {
+module.exports = function (rootDir) {
     var path = require('path');
 
     return {
@@ -10,15 +10,15 @@ module.exports = function(rootDir) {
             env: 'test',
             src: 'src/',
             dist: 'dist/',
-            version: '1.0',
+            version: '1.0'
         },
 
-        setup: function(config, flags) {
+        setup: function (config, flags) {
             config.env = flags.env;
             config.lint = flags.lint;
             config.minify = flags.minify || false;
 
             return config;
-        },
+        }
     };
 };
