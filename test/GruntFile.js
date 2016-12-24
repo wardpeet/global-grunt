@@ -12,5 +12,5 @@ module.exports = function(grunt) {
     var settings = require(path.join(rootDir, 'data/defaultSettings'))(rootDir);
 
     // Start our grunt initialization of tasks and config
-    require(path.join(rootDir, '../grunt/load-grunt.js'))(grunt, settings);
+    require(path.join(rootDir, '../lib/load-grunt.js'))(grunt, settings);
 };

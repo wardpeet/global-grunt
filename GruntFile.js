@@ -1,11 +1,5 @@
 /* global process */
 module.exports = function(grunt) {
-    // cache our require paths (#perfmatters)
-    require('cache-require-paths');
-
-    // Time Grunt
-    require('time-grunt')(grunt);
-
     // Dependencies
     var path = require('path');
 
@@ -23,5 +17,5 @@ module.exports = function(grunt) {
     };
 
     // Start our grunt initialization of tasks and config
-    require(path.join(rootDir, 'grunt/load-grunt.js'))(grunt, settings);
+    require(path.join(rootDir, 'lib/load-grunt.js'))(grunt, settings);
 };
